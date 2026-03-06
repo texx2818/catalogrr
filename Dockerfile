@@ -11,6 +11,6 @@ EXPOSE 4120
 
 ENV NODE_ENV=production \
     PORT=4120 \
-    DB_PATH=/data/shelfie.db
+    DB_PATH=/data/catalogrr.db
 
 CMD ["node", "server.js"]

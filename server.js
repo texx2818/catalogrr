@@ -11,7 +11,7 @@ const path = require('path');
 const fs = require('fs');
 
 const PORT = process.env.PORT || 3000;
-const DB_PATH = process.env.DB_PATH || '/data/shelfie.db';
+const DB_PATH = process.env.DB_PATH || '/data/catalogrr.db';
 
 // Make sure the data directory exists before opening the db
 fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });
@@ -176,7 +176,7 @@ app.get('/api/lookup/search', async (req, res) => {
     searches.push(
       fetch(
         `https://musicbrainz.org/ws/2/release/?query=${encodeURIComponent(q)}&limit=5&fmt=json`,
-        { headers: { 'User-Agent': 'Shelfie/1.0 (https://github.com/youruser/shelfie)' } }
+        { headers: { 'User-Agent': 'Catalogrr/1.0 (https://github.com/texx2818/catalogrr)' } }
       )
         .then(r => r.json())
         .then(d =>
@@ -438,7 +438,7 @@ app.get('/api/export/csv', (req, res) => {
   ];
 
   res.setHeader('Content-Type', 'text/csv; charset=utf-8');
-  res.setHeader('Content-Disposition', 'attachment; filename="shelfie-export.csv"');
+  res.setHeader('Content-Disposition', 'attachment; filename="catalogrr-export.csv"');
   res.send(lines.join('\r\n'));
 });
 
@@ -452,7 +452,7 @@ const INDEX_HTML = `<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shelfie</title>
+<title>Catalogrr</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230e0e0e'/><rect x='6' y='22' width='20' height='3' rx='1' fill='%23e8c547'/><rect x='6' y='7' width='3' height='18' rx='1' fill='%23e8c547'/><rect x='23' y='7' width='3' height='18' rx='1' fill='%23e8c547'/><rect x='9' y='10' width='5' height='10' rx='1' fill='%235b9bd5'/><rect x='15' y='8' width='4' height='12' rx='1' fill='%234ec94e'/><rect x='20' y='11' width='3' height='9' rx='1' fill='%23c864ff'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -944,7 +944,7 @@ const INDEX_HTML = `<!DOCTYPE html>
 <body>
 <div id="app">
   <header>
-    <div class="logo">shelf<span>ie</span></div>
+    <div class="logo">catalog<span>rr</span></div>
     <div class="header-stats" id="header-stats"></div>
     <div class="header-actions">
       <button class="btn" id="btn-import">↑ Import CSV</button>
@@ -1767,6 +1767,6 @@ function inferTypeFromStrings(...strings) {
 // Boot -------------------------------------------------------------------------
 
 app.listen(PORT, () => {
-  console.log(`shelfie listening on :${PORT}`);
+  console.log(`catalogrr listening on :${PORT}`);
   console.log(`database: ${DB_PATH}`);
 });
