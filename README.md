@@ -1,8 +1,8 @@
-# Shelfie
+# shelfie
 
 personal self-hosted catalog for your physical media. books, movies, music, games — anything you own.
 
-## Running with Docker
+## running with docker
 
 ```bash
 docker compose up -d
@@ -20,7 +20,7 @@ services:
   shelfie:
     image: ghcr.io/youruser/shelfie:latest
     ports:
-      - "3000:3000"
+      - "4120:4120"
     volumes:
       - shelfie-data:/data
     restart: unless-stopped
