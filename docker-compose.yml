@@ -11,6 +11,7 @@ services:
     environment:
       - PORT=4120
       - DB_PATH=/data/catalogrr.db
+      - RAWG_API_KEY=your_key_here
 
 volumes:
   catalogrr-data:

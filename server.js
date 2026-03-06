@@ -201,7 +201,7 @@ app.get('/api/lookup/search', async (req, res) => {
 
   if (!type || type === 'game') {
     searches.push(
-      fetch(`https://api.rawg.io/api/games?search=${encodeURIComponent(q)}&page_size=5`)
+      fetch(`https://api.rawg.io/api/games?search=${encodeURIComponent(q)}&page_size=5&key=${process.env.RAWG_API_KEY || ''}`)
         .then(r => r.json())
         .then(d =>
           (d.results || []).map(g => ({

@@ -25,6 +25,7 @@ services:
     environment:
       - PORT=4120
       - DB_PATH=/data/catalogrr.db
+      - RAWG_API_KEY=your_key_here
 
 volumes:
   catalogrr-data:
@@ -35,7 +36,7 @@ open [http://localhost:4120](http://localhost:4120).
 ## adding items
 
 - **Barcode / ISBN** — type or scan a barcode; Shelfie looks it up in Open Library (books) or UPC Item DB (everything else)
-- **Title search** — searches Open Library, OMDb, MusicBrainz, and RAWG depending on the selected type
+- **Title search** — searches Open Library, OMDb, MusicBrainz, and RAWG depending on the selected type (API KEY NEEDED)
 - **Manual entry** — fill in the form directly
 - **CSV import** — bulk-import from a spreadsheet
 
