@@ -1,6 +1,6 @@
 # Shelfie
 
-A self-hosted catalog for physical media. Books, movies, music, games — anything you own.
+personal self-hosted catalog for your physical media. books, movies, music, games — anything you own.
 
 ## Running with Docker
 
@@ -8,7 +8,7 @@ A self-hosted catalog for physical media. Books, movies, music, games — anythi
 docker compose up -d
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:4120](http://localhost:4120).
 
 Data is stored in a named Docker volume and survives container restarts and upgrades.
 
@@ -72,7 +72,7 @@ docker cp ./shelfie.db shelfie:/data/shelfie.db
 
 | Variable | Default | Description |
 |---|---|---|
-| `PORT` | `3000` | HTTP port |
+| `PORT` | `4120` | HTTP port |
 | `DB_PATH` | `/data/shelfie.db` | SQLite database path |
 
 ## License
