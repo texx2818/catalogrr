@@ -27,14 +27,14 @@ volumes:
 
 open [http://localhost:4120](http://localhost:4120).
 
-## Adding items
+## adding items
 
 - **Barcode / ISBN** — type or scan a barcode; Shelfie looks it up in Open Library (books) or UPC Item DB (everything else)
 - **Title search** — searches Open Library, OMDb, MusicBrainz, and RAWG depending on the selected type
 - **Manual entry** — fill in the form directly
 - **CSV import** — bulk-import from a spreadsheet
 
-## CSV format
+## csv format
 
 column names are case-insensitive. `title` is the only required field.
 
@@ -53,7 +53,3 @@ column names are case-insensitive. `title` is the only required field.
 | `cover_url` | |
 
 export your library at any time via the **↓ Export CSV** button.
-<<<<<<< HEAD
-=======
-
->>>>>>> fdae24825926570bfeed131e9ca5a9697771475d
